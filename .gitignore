@@ -1,0 +1,7 @@
+/.vscode/
+/.settings/
+/target/
+/activemq-data/
+/activemq/
+.classpath
+.project
