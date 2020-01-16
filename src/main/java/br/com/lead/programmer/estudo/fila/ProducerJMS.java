@@ -39,10 +39,13 @@ public class ProducerJMS {
 
         Message message = this.session.createTextMessage(mensagem);
         producer.send(message);
+        this.session.close();
+        this.connection.close();
+        this.context.close();
     }
 
     public static void main(String[] args) throws JMSException, NamingException {
-        for(int i = 0; i <= 100; i++ ){
+        for(int i = 0; i <= 2; i++ ){
           new ProducerJMS().enviaMensagem("Mensagem: #"+i);
         }
     }
